@@ -2,7 +2,10 @@ package it.dstech.connessioneDb;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ConnessioneDb {
@@ -20,10 +23,18 @@ public class ConnessioneDb {
 	  }
 	  
 	
-	  public List<String> cercaContinenti() {
+	  public ArrayList<String> cercaContinenti() throws ClassNotFoundException, SQLException {
+		    ArrayList<String> lista = new ArrayList<String>();
+		    String query = "SELECT distinct Continent FROM world.country;";
+		    PreparedStatement prep = connectionDb().prepareStatement(query);
+		    ResultSet result = prep.executeQuery();
+		    while (result.next()) {
+		      String stato = result.getString(1);
+		      lista.add(stato);
+		    }
+		    return lista;
+		  }
 		  
-		return null;
-		  
-	  }
+	  
 	 
 }
