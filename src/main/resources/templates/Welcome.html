@@ -1,48 +1,44 @@
+Manuel Dstech, [13.09.19 14:57]
+<dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId>
+<version>8.0.13</version> <!-- 5.1.6 --> </dependency>
+
+Manuel Dstech, [13.09.19 15:04]
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>DualWelcome</title>
+<title>DualWelcome</title>
 
-    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
-    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
 
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Nav</a>
-</nav>
 
-<main role="main" class="container">
 
-    <div class="starter-template">
-        <h1>Premi il tasto</h1>
-        <h2>
-            <span th:text="'Hello ' + ${message}"></span>
-        </h2>
-    </div>
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  
-    
+	<div class="starter-template">
+		<h1>Premi il tasto</h1>
 
-</main>
-<!-- /.container -->
+		<h2>Ciao</h2>
+	</div>
 
-<script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+	<div>
+
+		<form th:action="@{/}" method="POST">
+			<ul>
+				<span th:each="i : ${continent}"> <!--nation: riceve dal model -->
+					<input type="radio" name="continent" th:value="${i}" th:text="${i}"><br>
+				</span>
+			</ul>
+			<input type="submit" value="vai">
+	</div>
+
+
+
 </body>
 </html>

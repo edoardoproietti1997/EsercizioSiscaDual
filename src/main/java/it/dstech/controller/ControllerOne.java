@@ -5,13 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import it.dstech.connessioneDb.ConnessioneDb;
 
-
-public class Controller {
+@Controller
+public class ControllerOne {
 	
 	private List<String> continent = new ArrayList<String>();
 	
@@ -26,7 +27,7 @@ public class Controller {
 		continent = (cd.cercaContinenti());
 		
 		model.addAttribute("message", message);
-		
+	model.addAllAttributes(continent);	
 		
 		return "Welcome";
 	}
