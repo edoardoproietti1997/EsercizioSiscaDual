@@ -27,7 +27,7 @@ public class ControllerOne {
 		continent = (cd.cercaContinenti());
 		
 		model.addAttribute("message", message);
-	model.addAllAttributes(continent);	
+	model.addAttribute("continent",continent);	
 		
 		return "Welcome";
 	}

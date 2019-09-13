@@ -1,8 +1,3 @@
-Manuel Dstech, [13.09.19 14:57]
-<dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId>
-<version>8.0.13</version> <!-- 5.1.6 --> </dependency>
-
-Manuel Dstech, [13.09.19 15:04]
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -19,8 +14,6 @@ Manuel Dstech, [13.09.19 15:04]
 <body>
 
 
-
-
 	<div class="starter-template">
 		<h1>Premi il tasto</h1>
 
@@ -29,7 +22,7 @@ Manuel Dstech, [13.09.19 15:04]
 
 	<div>
 
-		<form th:action="@{/}" method="POST">
+		<form th:action="@{/cercaStato}" method="POST">
 			<ul>
 				<span th:each="i : ${continent}"> <!--nation: riceve dal model -->
 					<input type="radio" name="continent" th:value="${i}" th:text="${i}"><br>
