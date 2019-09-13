@@ -40,6 +40,7 @@ public class ControllerOne {
 		ConnessioneDb cd = new ConnessioneDb();
 		ArrayList<String> lista = new ArrayList<String>();
 		lista.addAll(cd.cercaStati(continente));
+		model.addAttribute( "lista" ,lista);
 		return "visualizzaStati";
 	}
 }
